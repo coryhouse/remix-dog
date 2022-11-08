@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["browser-route-module:/home/projects/node-nmasds/app/routes/index.tsx?browser", "../../../app/routes/index.tsx"],
+  "sourcesContent": ["export { default, meta } from \"/home/projects/node-nmasds/app/routes/index.tsx\";", "import { MetaFunction, useLoaderData, LoaderFunction } from 'remix';\n\ntype DogSearchResult = {\n  message: string[];\n  status: 'success';\n};\n\nexport const meta: MetaFunction = () => {\n  return {\n    title: 'Remix Doge',\n    description: 'Welcome to Remix Doge!',\n  };\n};\n\nexport const loader: LoaderFunction = async () => {\n  const resp = await fetch(`https://dog.ceo/api/breed/shiba/images/random/2`);\n  return await resp.json();\n};\n\nexport default function Index() {\n  const { message } = useLoaderData<DogSearchResult>();\n  return (\n    <section>\n      {message.map((imagePath) => (\n        <img key={imagePath} src={imagePath} />\n      ))}\n    </section>\n  );\n}\n"],
+  "mappings": ";;;;;;;;;AAAA;;;ACAA;AAOO,IAAM,OAAqB,MAAM;AACtC,SAAO;AAAA,IACL,OAAO;AAAA,IACP,aAAa;AAAA;AAAA;AASF,iBAAiB;AAC9B,QAAM,EAAE,YAAY;AACpB,SACE,oCAAC,WAAD,MACG,QAAQ,IAAI,CAAC,cACZ,oCAAC,OAAD;AAAA,IAAK,KAAK;AAAA,IAAW,KAAK;AAAA;AAAA;",
+  "names": []
+}
