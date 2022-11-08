@@ -14,7 +14,7 @@ export const meta: MetaFunction = () => {
 
 export const loader: LoaderFunction = async () => {
   const resp = await fetch(`https://dog.ceo/api/breed/shiba/images/random/2`);
-  return await resp.json();
+  return (await resp.json()) as DogSearchResult;
 };
 
 export default function Index() {
