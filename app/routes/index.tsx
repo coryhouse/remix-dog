@@ -1,14 +1,14 @@
-import { MetaFunction, useLoaderData, LoaderFunction } from 'remix';
+import { MetaFunction, useLoaderData, LoaderFunction } from "remix";
 
 type DogSearchResult = {
   message: string[];
-  status: 'success';
+  status: "success";
 };
 
 export const meta: MetaFunction = () => {
   return {
-    title: 'Remix Doge',
-    description: 'Welcome to Remix Doge!',
+    title: "Remix Doge",
+    description: "Welcome to Remix Doge!",
   };
 };
 
@@ -22,7 +22,7 @@ export default function Index() {
   return (
     <section>
       {message.map((imagePath) => (
-        <img key={imagePath} src={imagePath} />
+        <img key={imagePath} src={imagePath} alt="Dog" />
       ))}
     </section>
   );
